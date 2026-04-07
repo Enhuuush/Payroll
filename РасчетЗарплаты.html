@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор зарплаты 2026 | Программа для расчета зарплаты</title>
+    <meta name="description"
+        content="Программа для расчета зарплаты в соответствии с законодательством 2025-2026 гг. Расчет базовой зарплаты и суммы на руки.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <h1>КОО МРТ Менежмент</h1>
+            <h2>Расчет зарплаты <span class="year-badge">2026</span></h2>
+            <p>Реальный расчет базовой зарплаты и суммы на руки</p>
+        </header>
+
+        <main class="calculator-card">
+            <div class="input-grid">
+                <!-- Основные вводы -->
+                <div class="input-group primary">
+                    <div class="label-with-input">
+                        <label for="gross-input">Зарплата</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="gross-input" placeholder="0" inputmode="numeric">
+                        <span class="currency">₮</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-with-input">
+                        <label for="bonus-input">Бонус</label>
+                        <div class="percent-input-wrapper">
+                            <input type="number" id="bonus-percent" value="50" min="0" max="100">
+                            <span>%</span>
+                        </div>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="bonus-input" placeholder="0" inputmode="numeric">
+                        <span class="currency">₮</span>
+                    </div>
+                </div>
+
+                <div class="input-group primary">
+                    <div class="label-with-input">
+                        <label for="net-input">На руки (Всего)</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="net-input" placeholder="0" inputmode="numeric">
+                        <span class="currency">₮</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <section class="results-section">
+                <h3>Удержания и детализация</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">Общая зарплата</span>
+                        <span class="value" id="total-gross-value">0 ₮</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">НДШ (11.5%)</span>
+                        <span class="value" id="shi-value">0 ₮</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Налог</span>
+                        <span class="value" id="pit-value">0 ₮</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="label">Налоговый вычет</span>
+                        <span class="value positive" id="credit-value">0 ₮</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="summary-section">
+                <div class="summary-item">
+                    <span class="label">Общие удержания</span>
+                    <span class="value negative" id="total-deduction">0 ₮</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Программа расчета зарплаты</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
